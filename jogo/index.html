@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cora contra O Desbotador · Escolha fácil</title>
+<meta name="description" content="Corra com a Cora, pule e abaixe para fugir do Desbotador, que quer tirar a cor de tudo.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://escolhafacil.online/jogo/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/comum.css">
+<link rel="stylesheet" href="jogo.css">
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="ef-topo">
+  <div class="ef-wrap ef-topo__in">
+    <a class="ef-marca" href="../index.html" aria-label="Escolha fácil, página inicial"><span class="ef-marca__check" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Escolha fácil</a>
+    <nav class="ef-menu" aria-label="Menu principal"><ul><li><a href="../index.html">Início</a></li><li><a href="../escolha-facil-estados/estados.html">Estados</a></li><li><a href="../gerador/index.html">Gerador de peças</a></li><li><a href="index.html" aria-current="page">Jogo</a></li><li><a href="../contribua/index.html">Contribua</a></li></ul></nav>
+  </div>
+</header>
+
+<main id="conteudo" class="wrap jogo" tabindex="-1">
+  <div class="abertura">
+    <h1>Cora contra O Desbotador</h1>
+    <p class="lead">O Desbotador quer tirar a cor de tudo. Corra com a Cora, pule e abaixe para fugir dele.</p>
+  </div>
+
+  <div class="jogo__tela">
+    <canvas id="jogo" tabindex="0" role="img" aria-label="Jogo de corrida. Aperte Espaço para começar e pular, seta para baixo para abaixar." aria-describedby="como-jogar"></canvas>
+  </div>
+  <p class="sr-only" id="jogo-aviso" role="status" aria-live="polite"></p>
+
+  <section class="jogo__ajuda" id="como-jogar" aria-labelledby="como-jogar-titulo">
+    <h2 id="como-jogar-titulo">Como jogar</h2>
+    <ul>
+      <li><strong>Pular:</strong> <kbd>Espaço</kbd> ou <kbd>↑</kbd>. No celular, toque na metade de cima do jogo.</li>
+      <li><strong>Abaixar:</strong> segure <kbd>↓</kbd>. No celular, segure a metade de baixo do jogo.</li>
+      <li>Segure o pulo para ir mais alto. Abaixar no ar faz a Cora descer mais rápido.</li>
+      <li>Cada batida faz a Cora perder uma miçanga do colar, e o Desbotador chega mais perto. Perdeu as nove, recomeça.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="ef-rodape">
+    <div class="ef-wrap">
+      <div class="ef-rodape__in">
+        <div>
+          <a class="ef-marca" href="../index.html"><span class="ef-marca__check" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Escolha fácil</a>
+          <p>Perguntas simples. Respostas com fonte.</p>
+          <p><strong>Manifestação espontânea de eleitoras e eleitores.</strong> Responsável: Coletivo Escolha Fácil.</p>
+        </div>
+        <nav aria-labelledby="ef-rod-nav">
+          <h2 class="ef-rodape__tit" id="ef-rod-nav">Navegue</h2>
+          <ul>
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../escolha-facil-estados/estados.html">Estados: quem vota, decide</a></li>
+            <li><a href="../gerador/index.html">Gerador de peças</a></li>
+            <li><a href="index.html">Jogo</a></li>
+            <li><a href="../contribua/index.html">Contribua com o coletivo</a></li>
+            <li><a href="../assets/programa-de-governo-lula-2026.pdf" target="_blank" rel="noopener">Programa de governo (PDF)<span class="ef-sr"> (abre em nova aba)</span></a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="ef-rodape__tit">Fale com a gente</h2>
+          <ul>
+            <li><a href="mailto:contato@escolhafacil.online"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>contato@escolhafacil.online</a></li>
+            <li><a href="https://www.instagram.com/escolhafacil.online/" target="_blank" rel="noopener me"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>@escolhafacil.online<span class="ef-sr"> no Instagram (abre em nova aba)</span></a></li>
+          </ul>
+          <p style="margin-top:12px">Achou alguma informação errada? Escreva para a gente. Nós corrigimos.</p>
+        </div>
+      </div>
+      <div class="ef-rodape__base">
+        <p>Este site não usa cookies e não guarda dados de quem visita.</p>
+        <p>Atualizado em 6 de outubro de 2026.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="config.js"></script>
+<script src="render.js"></script>
+<script src="hud.js"></script>
+<script src="desbotador.js"></script>
+<script src="obstacles.js"></script>
+<script src="effects.js"></script>
+<script src="input.js"></script>
+<script src="player.js"></script>
+<script src="spawner.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
