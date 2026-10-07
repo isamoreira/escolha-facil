@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escolha fácil · Piauí</title>
+<meta name="description" content="Como Piauí votou em 2022 e no 1º turno de 2026, e como você pode ajudar no 2º turno de 25 de outubro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Atkinson+Hyperlegible+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/comum.css">
+<style>
+/* Mesma identidade do escolhafacil.online: roxo e amarelo, Atkinson Hyperlegible, cantos de 16px.
+   Estrutura: faixa fixa com navegação, uma coluna de leitura, tabelas e gráficos em largura total. */
+:root{
+  --papel:#FFFFFF; --fundo:#F7F4FB; --cartao:#FFFFFF; --tinta:#121014; --tinta-2:#3F3A46; --linha:#E3DEEA;
+  --acento:#5B21B6; --acento-suave:#F1EAFC; --amarelo:#FFD400; --verde:#0E7A43; --verde-suave:#E3F4EA;
+  --vermelho:#B42318; --vermelho-suave:#FDECEA; --forte:#3B0F70; --forte-tinta:#FFFFFF; --foco:#121014;
+  --raio:16px; --sombra:0 1px 2px rgba(18,16,20,.05),0 8px 24px rgba(59,15,112,.07);
+  --f-corpo:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-num:"Atkinson Hyperlegible Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:400 18px/1.55 var(--f-corpo);padding-inline:16px}
+a{color:var(--acento)}
+:focus-visible{outline:3px solid var(--foco);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1080px;margin-inline:auto}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;background:var(--amarelo);color:#121014;padding:8px 12px;z-index:50}
+/* topo */
+.ef-topo,.ef-rodape{margin-inline:-16px}
+.uf-atual{background:var(--acento-suave);border-color:var(--acento-suave)!important;color:var(--acento)!important}
+.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--papel);border-bottom:1px solid var(--linha);margin-inline:-16px;padding:10px 16px 0}
+.topo .wrap{display:flex;flex-direction:column;gap:6px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px}
+.marca i{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--amarelo);color:#121014;font-style:normal}
+.marca span.t{margin-left:auto;font-size:13px;font-weight:700;background:var(--acento-suave);color:var(--acento);padding:4px 10px;border-radius:99px}
+.nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--tinta);font-weight:700;font-size:15px;padding:7px 12px;border:2px solid var(--linha);border-radius:99px}
+.nav a:hover,.nav a[aria-current="true"]{border-color:var(--acento);background:var(--acento-suave);color:var(--acento)}
+/* blocos */
+section{padding-block:44px 8px}
+h1{font-size:clamp(40px,7vw,68px);line-height:1.02;margin:0 0 16px;letter-spacing:-.03em}
+h2{font-size:clamp(26px,4vw,36px);line-height:1.1;margin:0 0 10px;letter-spacing:-.01em;text-wrap:balance}
+h3{font-size:21px;line-height:1.2;margin:0 0 6px}
+p{margin:0 0 12px;max-width:68ch}
+.lead{font-size:20px;color:var(--tinta-2)}
+.marcado{background:linear-gradient(transparent 62%,var(--amarelo) 62%);padding-inline:2px;color:inherit}
+.selo{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:99px;border:2px solid var(--acento);color:var(--acento)}
+.selo.am{background:var(--amarelo);border-color:var(--amarelo);color:#121014}
+.selo.vd{border-color:var(--verde);color:var(--verde)}.selo.vm{border-color:var(--vermelho);color:var(--vermelho)}
+.aviso{display:flex;gap:10px;align-items:flex-start;background:var(--amarelo);color:#121014;border-radius:var(--raio);padding:12px 16px;font-weight:700;font-size:16px;margin-block:18px}
+.aviso span{max-width:80ch}
+.grade{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.card{background:var(--cartao);border:2px solid var(--linha);border-radius:var(--raio);padding:18px;min-width:0}
+.card.s{box-shadow:var(--sombra)}
+.card.forte{background:var(--forte);color:var(--forte-tinta);border-color:var(--forte)}
+.card.forte a{color:var(--amarelo)}
+.num{font:700 clamp(30px,5vw,42px)/1 var(--f-num);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.rot{font-size:15px;color:var(--tinta-2);margin-top:6px}
+.card.forte .rot{color:#DCCFF5}
+.bad{color:var(--vermelho)}.good{color:var(--verde)}
+ul.lista{margin:0;padding-left:20px}ul.lista li{margin-bottom:6px;max-width:68ch}
+ul.lista.sem{list-style:none;padding:0}
+/* grafico */
+.barras{display:grid;gap:8px;margin-top:14px}
+.linha{display:grid;grid-template-columns:minmax(96px,170px) 1fr 72px;gap:10px;align-items:center}
+.linha .v{font:700 14px var(--f-num);text-align:right;font-variant-numeric:tabular-nums}
+.linha .n{font-size:15px;font-weight:700;min-width:0;overflow-wrap:anywhere}
+.trilho{position:relative;height:30px;background:var(--acento-suave);border-radius:8px;overflow:hidden}
+.trilho b{position:absolute;inset:0 auto 0 0;background:var(--acento);border-radius:8px}
+.legenda{display:flex;flex-wrap:wrap;gap:14px;font-size:15px;color:var(--tinta-2);margin-top:10px}
+.legenda i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+/* tabela */
+.ferr{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.ferr input,.ferr select{font:inherit;font-size:16px;padding:10px 12px;border:2px solid var(--linha);border-radius:12px;background:var(--cartao);color:var(--tinta);min-width:0}
+.ferr input{flex:1 1 220px}
+.tabela{overflow:auto;max-height:min(440px,62vh);overscroll-behavior:contain;border:2px solid var(--linha);border-radius:var(--raio);background:var(--cartao)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--linha);white-space:nowrap}
+th:first-child{z-index:3}th:first-child,td:first-child{z-index:1;text-align:left;position:sticky;left:0;background:var(--cartao);font-weight:700;white-space:normal;min-width:150px}
+th{z-index:2;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--tinta-2);cursor:pointer;user-select:none;background:var(--cartao);position:sticky;top:0}
+th[aria-sort]{color:var(--acento)}
+td{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+td:first-child{font-family:var(--f-corpo)}
+td.t{text-align:left;font-family:var(--f-corpo)}
+.cont{font-size:15px;color:var(--tinta-2);margin-top:8px}
+.btn{font:700 16px var(--f-corpo);padding:11px 18px;border-radius:12px;border:2px solid var(--acento);background:var(--acento);color:#fff;cursor:pointer}
+.btn.sec{background:var(--cartao);color:var(--acento)}
+/* passos */
+ol.passos{list-style:none;counter-reset:p;margin:0;padding:0;display:grid;gap:12px}
+ol.passos li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--cartao);border:2px solid var(--linha);border-radius:var(--raio);padding:16px}
+ol.passos li::before{content:counter(p);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--amarelo);color:#121014;font:700 22px var(--f-num)}
+ol.passos strong{display:block;font-size:19px}
+.fala{border-left:5px solid var(--amarelo);padding:4px 0 4px 14px;margin:8px 0;font-style:normal;color:var(--tinta)}
+.msg{background:var(--verde-suave);border:2px solid var(--verde);border-radius:var(--raio);padding:14px 16px;white-space:pre-wrap;font-size:16px;margin:8px 0}
+details{background:var(--cartao);border:2px solid var(--linha);border-radius:var(--raio);padding:0 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style-position:outside}
+details[open] summary{border-bottom:1px solid var(--linha);margin-bottom:10px}
+details p:last-child{padding-bottom:6px}
+.check label{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--linha);cursor:pointer}
+.check input{width:24px;height:24px;accent-color:var(--acento);flex:none;margin-top:2px}
+.tempo{display:grid;gap:12px}
+.fase{display:grid;grid-template-columns:130px 1fr;gap:16px;background:var(--cartao);border:2px solid var(--linha);border-radius:var(--raio);padding:16px}
+.fase .q{font:700 20px var(--f-num)}.fase .q small{display:block;font:400 14px var(--f-corpo);color:var(--tinta-2)}
+.fase.dia{background:var(--forte);color:var(--forte-tinta);border-color:var(--forte)}.fase.dia .q small{color:#DCCFF5}
+@media (max-width:640px){.fase{grid-template-columns:1fr;gap:6px}.linha{grid-template-columns:96px 1fr 62px;gap:8px}body{font-size:17px}}
+.fonte-dados{padding-block:48px;color:var(--tinta-2);font-size:15px}
+.fonte-dados p{max-width:80ch}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#cenario">Pular para o conteúdo</a>
+<header class="ef-topo">
+  <div class="ef-wrap ef-topo__in">
+    <a class="ef-marca" href="../index.html" aria-label="Escolha fácil, página inicial"><span class="ef-marca__check" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Escolha fácil</a>
+    <nav class="ef-menu" aria-label="Menu principal"><ul><li><a href="../index.html">Início</a></li><li><a href="estados.html" aria-current="page">Estados</a></li><li><a href="../gerador/index.html">Gerador de peças</a></li><li><a href="../contribua/index.html">Contribua</a></li></ul></nav>
+  </div>
+</header>
+<header class="topo"><div class="wrap">
+ <nav class="nav" aria-label="Seções"><a class="uf-atual" href="estados.html">PI · trocar de estado</a><a href="#cenario">Os números</a><a href="#municipios">Sua cidade</a><a href="#ajude">Como ajudar</a><a href="#regras">Jeito certo</a></nav>
+</div></header>
+<main class="wrap">
+<section id="cenario" style="padding-top:36px">
+ <span class="selo am">2º turno · domingo, 25 de outubro</span>
+ <h1 style="margin-top:14px">Quem vota, <span class="marcado">decide</span>.</h1>
+ <p class="lead">No 1º turno, muita gente no Piauí ficou em casa. Cada uma dessas pessoas pode mudar o 2º turno.<br>Veja os números. Depois fale com quem você conhece.</p>
+ <p class="cont" style="margin-top:0">Toda informação aqui tem fonte: dados abertos do TSE.</p>
+ <div class="grade g4" id="kpis" style="margin-top:22px"><div class="card forte s"><div class="num">464 mil</div><div class="rot">de pessoas não foram votar no 1º turno no Piauí. É cerca de 1 em 6 eleitores.</div></div><div class="card s"><div class="num">14,9%</div><div class="rot">de abstenção em Teresina, a maior cidade. Em 2022 era 15,2%. Hoje são 1.245 pessoas a menos em casa.</div></div><div class="card s"><div class="num">81</div><div class="rot">cidades do estado onde a abstenção subiu em relação ao 1º turno de 2022.</div></div><div class="card s"><div class="num">27 mil</div><div class="rot">eleitores: é o tamanho de cada 1 ponto de abstenção.</div></div></div>
+ <h2 style="margin-top:38px">Seu voto conta. O de quem você conhece também.</h2>
+ <div class="grade g2">
+  <div class="card"><span class="selo vm">Pergunta 1</span><h3 style="margin-top:10px">Você conhece alguém que não costuma votar?</h3><p>Pode ser por trabalho, por distância ou por cansaço. Uma mensagem no sábado e um plano para o domingo já mudam a história. Em São Raimundo Nonato, a abstenção foi de 13,9% para 15,0%: 651 pessoas a mais em casa.</p></div>
+  <div class="card"><span class="selo">Pergunta 2</span><h3 style="margin-top:10px">Você conhece alguém que ainda tem dúvida?</h3><p>Muita gente decide pelo que sente no bolso, na saúde, no emprego. Em Cocal, o apoio ao Lula caiu 8,7 pontos desde 2022. Conversa sem briga e com fonte funciona.</p></div>
+ </div>
+ <h2 style="margin-top:38px">Onde o Lula perdeu mais votos desde 2022</h2>
+ <p>Comparação entre o 1º turno de 2022 e o de 2026. Em Teresina a diferença é de 5.119 votos. É onde a conversa mais importa.</p>
+ <div class="barras" id="grafico" role="img" aria-label="Gráfico de barras: Onde o Lula perdeu mais votos desde 2022"></div>
+ <div class="legenda"><span><i style="background:var(--acento)"></i>Votos a menos que em 2022</span></div>
+</section>
+<section id="municipios">
+ <h2>Como foi na sua cidade?</h2>
+ <p>Procure pelo nome. Toque no título de uma coluna para ordenar.</p>
+ <div class="ferr"><input id="busca" type="search" placeholder="Digite o nome da sua cidade" aria-label="Buscar cidade"></div>
+ <div class="tabela" tabindex="0" role="region" aria-label="Tabela por cidade, role para ver mais" id="tabela-wrap"><table id="tab"><thead></thead><tbody></tbody></table></div>
+ <p class="cont" id="contagem"></p>
+ <p class="cont">Fonte: TSE, dados abertos, votos para presidente no 1º turno de 2022 e no 1º turno de 2026. "Bolsonaro/Flávio" mostra Bolsonaro em 2022 e Flávio Bolsonaro em 2026. Abst. = abstenção, quem não foi votar.</p>
+</section>
+<section id="ajude">
+ <h2>Você pode ajudar. Leva 2 minutos.</h2>
+ <p class="lead">Fale com quem você conhece: vizinha, colega, parente, quem pega o ônibus com você. Não precisa ser especialista.</p>
+ <ol class="passos">
+  <li><div><strong>Pergunte</strong>Comece com uma pergunta, não com um discurso. <div class="fala">"O que mais pesa no seu dia hoje: preço, saúde, trabalho, segurança?"</div></div></li>
+  <li><div><strong>Escute</strong>Repita com as palavras da pessoa. Não corrija e não discuta.</div></li>
+  <li><div><strong>Mostre</strong>Abra o tema dela em escolhafacil.online. Leia uma pergunta e veja o selo: <em>Já existe</em>, <em>Já começou</em> ou <em>Está no programa</em>. Toque em "Entenda" para ver a fonte.</div></li>
+  <li><div><strong>Combine</strong>Peça algo pequeno. <div class="fala">"Você vai de manhã ou à tarde? Posso te mandar um lembrete?"</div></div></li>
+ </ol>
+
+ <h3 style="margin-top:28px">Quer mandar uma mensagem? Copie esta.</h3>
+ <div class="msg">Oi, [nome]! Domingo, dia 25, é o 2º turno. Dá para votar das 8h às 17h. Leve um documento com foto (pode ser o e-Título no celular). Na urna, é 1 e depois 3. Se quiser ver as perguntas e as fontes: escolhafacil.online</div>
+ <p class="cont">Mande só para quem conhece e aceita receber.</p>
+
+ <h3 style="margin-top:28px">Como votar no dia 25</h3>
+ <ol class="passos">
+  <li><div><strong>Leve um documento com foto</strong>Pode ser o e-Título no celular.</div></li>
+  <li><div><strong>Vá ao seu local de votação entre 8h e 17h</strong>Horário de Brasília. Não sabe onde vota? Consulte no site do TSE.</div></li>
+  <li><div><strong>Na urna, digite 1 e depois 3</strong></div></li>
+  <li><div><strong>Confira a foto e aperte a tecla verde CONFIRMA</strong></div></li>
+ </ol>
+</section>
+<section id="regras">
+ <h2>Faça do jeito certo</h2>
+ <p>Para a sua conversa ajudar e não dar problema. Isto não é parecer jurídico. Antes de imprimir ou distribuir material, consulte a Justiça Eleitoral ou um advogado.</p>
+ <div class="grade g2">
+  <div class="card"><span class="selo vd">Pode</span>
+   <ul class="lista" style="margin-top:12px"><li>Conversar, ouvir e mostrar a fonte.</li><li>Compartilhar as perguntas do site.</li><li>Lembrar da data, do horário e do documento.</li><li>Ajudar a achar o local de votação no site do TSE.</li></ul></div>
+  <div class="card"><span class="selo vm">Não pode</span>
+   <ul class="lista" style="margin-top:12px"><li>Dar ou prometer dinheiro, brinde ou favor por voto.</li><li>Oferecer transporte a eleitores.</li><li>Criar perfil falso ou usar robô.</li><li>Passar adiante boato ou montagem.</li><li>Usar o horário de trabalho ou recursos públicos, se for servidor.</li></ul></div>
+ </div>
+</section>
+</main>
+<div class="wrap fonte-dados"><p><strong>Escolha fácil.</strong> Feito por um coletivo de pessoas voluntárias. Dados: TSE (dados abertos e portal de resultados). Total de 224 municípios no Piauí. <a href="estados.html">Escolher outro estado</a>.</p></div>
+<footer class="ef-rodape">
+    <div class="ef-wrap">
+      <div class="ef-rodape__in">
+        <div>
+          <a class="ef-marca" href="../index.html"><span class="ef-marca__check" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Escolha fácil</a>
+          <p>Perguntas simples. Respostas com fonte.</p>
+          <p><strong>Manifestação espontânea de eleitoras e eleitores.</strong> Responsável: Coletivo Escolha Fácil.</p>
+        </div>
+        <nav aria-labelledby="ef-rod-nav">
+          <h2 class="ef-rodape__tit" id="ef-rod-nav">Navegue</h2>
+          <ul>
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../escolha-facil-estados/estados.html">Estados: quem vota, decide</a></li>
+            <li><a href="../gerador/index.html">Gerador de peças</a></li>
+            <li><a href="../contribua/index.html">Contribua com o coletivo</a></li>
+            <li><a href="../assets/programa-de-governo-lula-2026.pdf" target="_blank" rel="noopener">Programa de governo (PDF)<span class="ef-sr"> (abre em nova aba)</span></a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="ef-rodape__tit">Fale com a gente</h2>
+          <ul>
+            <li><a href="mailto:contato@escolhafacil.online"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>contato@escolhafacil.online</a></li>
+            <li><a href="https://www.instagram.com/escolhafacil.online/" target="_blank" rel="noopener me"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>@escolhafacil.online<span class="ef-sr"> no Instagram (abre em nova aba)</span></a></li>
+          </ul>
+          <p style="margin-top:12px">Achou alguma informação errada? Escreva para a gente. Nós corrigimos.</p>
+        </div>
+      </div>
+      <div class="ef-rodape__base">
+        <p>Este site não usa cookies e não guarda dados de quem visita.</p>
+        <p>Atualizado em 6 de outubro de 2026.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+const D=[["ALAGOINHA DO PIAUÍ",6145,3648,3537,-111,-4.5,270,4.7,13.7,13.3,9],["ALEGRETE DO PIAUÍ",4534,2665,2512,-153,-7.1,277,7.3,20.2,20.6,56],["ALTO LONGÁ",12857,8253,8458,205,-1.8,434,3.4,13.9,13.4,15],["ALTOS",37002,22770,23026,256,-5.3,1966,5.4,13.5,13.8,586],["ALVORADA DO GURGUÉIA",4659,2826,2725,-101,-6.7,279,6.8,17.9,18.0,51],["ACAUÃ",6390,4647,4315,-332,-8.4,345,6.1,9.9,10.1,39],["AMARANTE",16004,9683,10090,407,-0.7,368,2.3,20.1,20.0,150],["AGRICOLÂNDIA",5547,3135,3373,238,-3.1,250,4.3,20.5,19.4,34],["ANTÔNIO ALMEIDA",3064,1626,1517,-109,-7.6,251,9.2,18.9,18.4,9],["ANGICAL DO PIAUÍ",6640,4092,4025,-67,-2.3,153,2.7,21.5,18.0,-264],["BAIXA GRANDE DO RIBEIRO",11444,5675,4996,-679,-15.2,1554,13.7,12.8,15.5,539],["ASSUNÇÃO DO PIAUÍ",7632,4316,4225,-91,-4.4,282,5.2,26.1,28.8,354],["BARRA D'ALCÂNTARA",3576,2111,2172,61,-2.7,140,4.4,21.5,19.5,-34],["AROEIRAS DO ITAIM",4352,2633,2937,304,-4.3,226,3.8,9.6,9.7,70],["AROAZES",5575,3618,3445,-173,-3.6,171,4.0,19.8,19.5,-16],["BARRAS",38201,20919,21523,604,-3.3,1577,4.0,21.4,19.0,-529],["ARRAIAL",4367,2696,2858,162,-0.8,125,2.7,19.4,16.2,-106],["ANÍSIO DE ABREU",7166,4814,4957,143,-1.2,183,2.7,16.8,15.4,-55],["BARREIRAS DO PIAUÍ",3633,1987,1816,-171,-5.5,115,4.8,24.2,28.0,172],["AVELINO LOPES",9563,5165,5070,-95,-3.4,359,4.4,21.1,21.4,96],["BARRO DURO",6411,3229,3441,212,-3.6,337,4.2,22.4,20.0,-43],["BELA VISTA DO PIAUÍ",3462,2310,2195,-115,-3.9,193,6.6,8.8,7.3,-45],["BATALHA",22539,11708,11524,-184,-2.5,685,3.8,25.7,24.1,-288],["BELÉM DO PIAUÍ",3328,2038,2161,123,-5.7,241,6.8,13.2,10.2,-52],["BENEDITINOS",9612,6277,6156,-121,-3.6,358,4.4,16.7,17.1,91],["BERTOLÍNIA",4969,2740,2718,-22,-6.2,315,6.4,15.9,16.4,101],["BOCAINA",5573,3438,3541,103,-1.2,83,1.0,12.3,14.1,148],["BOM PRINCÍPIO DO PIAUÍ",6778,3850,3906,56,-6.4,457,6.6,15.7,14.8,43],["BETÂNIA DO PIAUÍ",5865,3881,3969,88,-7.1,288,5.2,14.3,13.8,47],["BOA HORA",6884,3817,4079,262,-2.2,286,3.9,20.9,19.1,-19],["BRASILEIRA",8739,4716,5054,338,-3.2,311,3.4,21.8,22.5,301],["BOQUEIRÃO DO PIAUÍ",6086,3412,3701,289,-2.8,203,3.1,22.7,21.8,80],["BOM JESUS",19900,10360,9349,-1011,-9.5,1858,10.2,15.2,15.6,270],["CABECEIRAS DO PIAUÍ",9837,5938,6010,72,-3.7,379,4.6,21.1,21.5,170],["CAJAZEIRAS DO PIAUÍ",3662,2280,2349,69,1.1,74,2.5,17.3,19.5,114],["BURITI DOS MONTES",6972,4640,4749,109,-4.3,384,5.9,13.8,13.6,66],["BONFIM DO PIAUÍ",4967,3526,3549,23,-0.9,90,2.1,17.7,16.1,-77],["BURITI DOS LOPES",17653,9592,9990,398,-2.0,464,1.7,17.2,15.8,-52],["BREJO DO PIAUÍ",3894,2743,2605,-138,-4.0,127,4.2,16.8,19.0,113],["CAJUEIRO DA PRAIA",7643,4368,4555,187,-5.1,463,5.6,15.8,15.4,101],["CAMPINAS DO PIAUÍ",5376,3635,3523,-112,-3.8,164,4.0,20.5,21.2,69],["CALDEIRÃO GRANDE DO PIAUÍ",5176,3448,3290,-158,-4.8,237,5.3,12.6,14.4,122],["CAMPO GRANDE DO PIAUÍ",5304,3279,3478,199,-2.7,175,3.2,18.3,15.8,-77],["CAPITÃO DE CAMPOS",10509,6155,6107,-48,-3.4,349,3.9,20.8,20.1,6],["CAPITÃO GERVÁSIO OLIVEIRA",4054,2730,2776,46,-7.4,204,5.4,14.6,13.6,22],["CAMPO LARGO DO PIAUÍ",5863,3232,3349,117,-4.7,358,6.5,18.9,19.9,174],["CAMPO ALEGRE DO FIDALGO",4536,3174,2978,-196,-9.1,326,8.2,13.5,12.2,-31],["CANTO DO BURITI",16253,9073,8739,-334,-5.0,805,6.2,21.0,22.1,350],["CANAVIEIRA",3447,2136,1968,-168,-7.6,248,9.2,20.4,21.0,41],["CAMPO MAIOR",35864,20533,20616,83,-1.9,1039,2.9,15.7,15.2,-8],["CARAÚBAS DO PIAUÍ",5366,2998,2861,-137,-7.2,354,7.5,17.2,17.2,69],["CARIDADE DO PIAUÍ",5023,3257,3235,-22,-7.0,262,5.7,16.8,15.4,-19],["COCAL DE TELHA",4645,2902,2737,-165,-6.0,175,5.1,23.2,22.7,9],["COCAL DOS ALVES",5586,3758,3550,-208,-7.2,293,6.6,18.9,17.4,-51],["CAXINGÓ",5777,3560,3632,72,-4.0,313,5.8,15.5,13.8,-49],["CARACOL",8414,5319,5324,5,-3.5,351,4.8,17.8,17.8,79],["CASTELO DO PIAUÍ",16956,8914,8570,-344,-5.3,795,5.7,22.9,23.4,290],["COLÔNIA DO PIAUÍ",6180,3907,3861,-46,-1.0,122,2.6,23.5,22.3,-89],["CONCEIÇÃO DO CANINDÉ",5002,2968,2949,-19,-7.1,355,7.9,16.3,15.8,40],["COCAL",23420,12642,12569,-73,-8.7,2104,9.3,17.7,16.0,23],["COIVARAS",5672,3435,3652,217,-3.3,285,4.3,10.7,11.0,83],["CORRENTE",21194,11012,10577,-435,-5.4,1093,5.9,21.0,20.5,111],["CORONEL JOSÉ DIAS",5395,3579,3773,194,-6.0,303,5.9,12.9,13.3,109],["CURIMATÁ",9386,5095,5040,-55,-5.9,512,5.5,19.0,18.4,66],["COLÔNIA DO GURGUÉIA",5574,3207,3182,-25,-4.2,228,4.5,18.5,20.3,180],["CURRAIS",6287,3492,3786,294,-9.0,589,8.6,14.8,14.2,132],["CRISTALÂNDIA DO PIAUÍ",6237,3478,3580,102,-5.7,359,6.4,18.6,21.5,334],["CRISTINO CASTRO",8594,4773,4894,121,-7.9,653,7.5,19.3,17.2,-7],["CURRALINHOS",5297,3390,3589,199,-2.8,189,3.3,14.8,14.7,71],["CURRAL NOVO DO PIAUÍ",5409,3371,3797,426,-5.6,250,4.3,14.8,13.9,79],["DIRCEU ARCOVERDE",6674,4214,4615,401,-1.5,238,3.5,17.1,17.3,132],["DEMERVAL LOBÃO",13788,7385,8346,961,-2.5,715,3.5,16.7,13.8,-121],["DOM EXPEDITO LOPES",6542,4177,4187,10,-3.8,299,4.6,11.3,11.9,92],["DOMINGOS MOURÃO",4268,2804,2707,-97,-4.5,174,5.1,19.9,19.4,-1],["ELESBÃO VELOSO",13416,7974,8078,104,-4.3,612,5.3,22.6,20.8,-84],["DOM INOCÊNCIO",7564,5273,5136,-137,-6.4,405,6.1,13.8,14.5,122],["ELISEU MARTINS",4015,2217,2265,48,-2.5,129,3.6,21.5,23.0,135],["FLORIANO",44933,25485,24255,-1230,-4.6,1905,5.1,19.4,18.3,-344],["FLORESTA DO PIAUÍ",2599,1622,1606,-16,-3.3,63,2.9,24.5,21.1,-94],["ESPERANTINA",32709,16567,16844,277,-3.6,1539,4.7,21.9,21.1,219],["FRANCISCO MACEDO",2841,1762,1794,32,-4.0,143,5.3,16.2,14.3,-27],["FLORES DO PIAUÍ",4318,2525,2453,-72,-3.2,140,4.3,22.3,23.9,100],["FRANCISCO AYRES",5168,2863,3009,146,-3.2,231,4.9,19.9,22.5,263],["FRANCINÓPOLIS",4556,2783,3013,230,0.1,76,1.4,22.5,19.3,-98],["FARTURA DO PIAUÍ",4753,3310,3403,93,-3.2,132,3.0,17.0,17.2,60],["GUARIBAS",4478,2966,2943,-23,-4.6,172,4.9,22.0,23.7,141],["FRONTEIRAS",9541,5857,5572,-285,-4.3,372,4.8,17.9,17.9,31],["GUADALUPE",8682,4828,4444,-384,-5.8,355,5.9,25.4,25.5,40],["FRANCISCO SANTOS",7087,4498,4396,-102,-2.6,207,3.5,19.4,17.1,-187],["ILHA GRANDE",9354,5350,5736,386,-2.8,391,3.6,18.6,15.8,-124],["GEMINIANO",6469,4138,4329,191,-3.7,288,4.2,13.9,12.1,-53],["INHUMA",13109,7818,7909,91,-3.2,395,3.2,21.2,18.9,-218],["IPIRANGA DO PIAUÍ",7746,5007,5053,46,-4.4,319,4.5,18.0,16.2,-80],["HUGO NAPOLEÃO",4428,2701,2556,-145,-6.2,262,7.1,16.1,18.2,134],["ITAINÓPOLIS",9605,6033,5887,-146,-3.2,344,4.3,16.7,16.6,25],["GILBUÉS",8660,4997,4968,-29,-5.6,412,5.1,19.9,19.5,83],["JACOBINA DO PIAUÍ",5231,3538,3262,-276,-10.4,366,7.6,10.7,8.9,-64],["ISAÍAS COELHO",6463,4322,4360,38,-3.2,234,4.3,16.8,17.1,76],["ITAUEIRA",9279,5129,5029,-100,-3.9,442,5.9,21.2,22.3,186],["JATOBÁ DO PIAUÍ",6898,4332,4558,226,-3.5,300,4.2,14.2,15.0,152],["JOAQUIM PIRES",11817,6789,6401,-388,-4.8,480,5.2,19.3,20.1,169],["JAICÓS",14188,7744,7799,55,-4.2,632,5.3,23.4,22.7,79],["JARDIM DO MULATO",4530,2655,2752,97,-3.4,214,4.4,18.0,15.5,-69],["JOCA MARQUES",5603,3035,3383,348,-4.7,380,6.2,20.4,17.3,-20],["JUAZEIRO DO PIAUÍ",5440,3458,3306,-152,-4.6,226,4.8,15.5,14.4,-50],["JOSÉ DE FREITAS",35332,22907,23802,895,-2.3,1108,3.0,14.5,13.7,53],["JÚLIO BORGES",5222,2997,3178,181,-2.2,172,3.7,20.0,23.7,326],["LAGOA ALEGRE",8599,5495,5855,360,-2.9,297,3.1,15.0,14.4,61],["LAGOA DE SÃO FRANCISCO",6040,3633,3355,-278,-7.3,340,7.4,21.0,22.2,120],["JERUMENHA",4814,2867,2797,-70,-4.4,199,4.8,19.5,19.7,50],["LAGOA DO PIAUÍ",5239,2838,3226,388,-4.6,382,5.7,13.9,12.6,50],["JUREMA",5184,3240,3338,98,-3.7,209,4.5,17.0,18.8,178],["LAGOA DO SÍTIO",4865,2907,3155,248,-0.9,170,3.3,17.6,16.6,18],["LUIS CORREIA",27367,15253,15245,-8,-5.0,1464,5.6,18.9,17.4,-85],["LANDRI SALES",5122,2846,2837,-9,-8.2,376,8.8,24.0,22.7,59],["LAGOA DO BARRO DO PIAUÍ",4646,3053,3000,-53,-7.9,303,7.3,15.2,14.4,17],["MANOEL EMÍDIO",4913,3011,3075,64,-4.9,254,5.5,18.8,17.3,-15],["LUZILÂNDIA",20147,11578,11189,-389,-4.3,798,4.7,20.3,19.8,6],["MADEIRO",6714,3744,3945,201,-2.3,206,2.9,25.7,22.1,-168],["MATIAS OLÍMPIO",9161,4928,4920,-8,-5.5,520,6.4,24.3,22.0,-106],["LAGOINHA DO PIAUÍ",3244,1965,1883,-82,-4.4,131,5.1,19.5,21.1,77],["MASSAPÊ DO PIAUÍ",6452,3945,3825,-120,-4.2,303,6.4,18.3,21.8,327],["MARCOLÂNDIA",8736,4486,4537,51,-9.9,879,9.4,14.4,14.3,176],["MARCOS PARENTE",4326,2174,2279,105,-2.8,199,3.8,20.6,19.4,20],["MILTON BRANDÃO",7087,3269,3324,55,-2.8,310,4.6,25.8,25.0,43],["JOÃO COSTA",3918,2236,2470,234,-2.7,193,4.7,15.5,17.6,178],["MONSENHOR GIL",10476,6545,6557,12,-3.5,396,3.9,15.6,14.9,-4],["MIGUEL LEÃO",1890,903,1001,98,-4.1,164,6.5,15.4,13.8,13],["MORRO CABEÇA NO TEMPO",4202,2225,2551,326,-1.3,148,2.6,19.1,19.5,137],["MIGUEL ALVES",27719,15013,16281,1268,-1.2,907,3.2,24.3,23.1,196],["MONSENHOR HIPÓLITO",7493,4709,4911,202,-3.6,369,5.1,13.8,15.1,199],["MORRO DO CHAPÉU DO PIAUÍ",5871,3301,3554,253,-2.2,200,3.0,23.5,19.6,-139],["NOSSA SENHORA DE NAZARÉ",6117,3855,4250,395,-2.4,171,2.0,15.0,14.1,51],["NAZARÉ DO PIAUÍ",6697,4412,4398,-14,-3.5,193,3.4,20.8,19.4,-61],["MONTE ALEGRE DO PIAUÍ",9415,5680,5533,-147,-6.0,500,6.3,21.2,21.3,113],["NAZÁRIA",11555,7137,7259,122,-2.7,382,3.1,17.2,15.0,-195],["NOVO ORIENTE DO PIAUÍ",5158,3359,3316,-43,-4.3,194,4.5,21.6,18.9,-135],["NOVA SANTA RITA",4142,2942,2847,-95,-6.6,202,5.6,12.2,14.8,146],["MURICI DOS PORTELAS",6070,3525,3539,14,-1.8,144,2.7,18.4,18.9,82],["OEIRAS",31021,17737,18390,653,-0.5,569,1.5,18.9,18.1,-4],["NOVO SANTO ANTÔNIO",4732,3086,3169,83,-3.1,155,3.3,14.7,15.9,114],["PADRE MARCOS",6038,3842,3749,-93,-1.7,158,3.4,17.6,17.5,3],["NOSSA SENHORA DOS REMÉDIOS",8627,5151,5088,-63,-4.6,445,5.7,17.3,17.0,56],["PALMEIRAIS",13336,8267,8728,461,-2.1,425,3.0,17.9,17.7,161],["PARNAGUÁ",7624,4577,4413,-164,-6.8,431,6.8,21.4,21.5,94],["PAES LANDIM",4499,2183,2407,224,1.3,156,2.9,15.6,21.4,366],["OLHO D'ÁGUA DO PIAUÍ",2708,1447,1711,264,-0.5,116,2.9,20.0,17.9,15],["PARNAÍBA",118423,55488,58315,2827,-2.0,5519,3.4,17.3,15.6,-675],["PAQUETÁ",4173,2716,2884,168,-1.7,149,3.1,11.4,12.0,61],["PATOS DO PIAUÍ",5568,3556,3479,-77,-4.1,225,5.0,17.5,17.2,22],["PAJEÚ DO PIAUÍ",3407,2057,1992,-65,-2.6,131,5.1,21.9,21.6,-11],["PALMEIRA DO PIAUÍ",4922,2654,2492,-162,-11.6,536,11.6,16.4,16.1,68],["PAU D'ARCO DO PIAUÍ",5401,3297,3500,203,-5.0,299,5.1,14.8,12.8,-31],["PAULISTANA",17052,10490,10282,-208,-6.9,930,6.0,16.4,15.3,11],["PASSAGEM FRANCA DO PIAUÍ",4164,2219,2169,-50,-4.6,128,3.5,23.4,26.0,183],["PIMENTEIRAS",9384,5589,5552,-37,-2.3,286,3.6,18.3,19.6,218],["PEDRO LAURENTINO",3276,1552,1935,383,4.8,-3,-4.1,13.3,15.0,129],["PICOS",54212,31183,31334,151,-2.5,1783,3.0,14.6,12.7,-815],["PIO IX",15109,9375,9583,208,-4.4,729,5.2,16.3,15.9,142],["PIRACURUCA",25821,14425,13792,-633,-7.6,1566,6.7,19.3,18.6,131],["PAVUSSU",3909,2492,2522,30,-3.4,151,4.6,21.8,20.7,-14],["PEDRO II",35312,17672,18322,650,-2.9,1495,4.3,23.8,23.3,430],["PORTO",10000,5291,5256,-35,-8.5,842,9.4,23.3,21.8,46],["PORTO ALEGRE DO PIAUÍ",2106,1209,1138,-71,-7.3,177,10.1,18.1,17.0,-8],["QUEIMADA NOVA",7227,4792,3958,-834,-11.7,508,9.9,12.9,17.0,359],["PRATA DO PIAUÍ",3706,2209,2402,193,-1.7,112,2.7,20.5,19.0,6],["PIRIPIRI",53170,27351,26574,-777,-4.1,2007,4.6,24.5,23.4,-206],["RIBEIRA DO PIAUÍ",3891,2331,2426,95,-4.0,164,4.4,17.6,18.6,108],["RIO GRANDE DO PIAUÍ",5426,3406,3407,1,-3.6,210,4.4,19.4,18.9,22],["REDENÇÃO DO GURGUÉIA",7001,3558,3652,94,-4.2,454,6.3,21.3,18.4,-113],["SANTA FILOMENA",5554,2961,2782,-179,-9.8,474,9.3,18.3,18.9,127],["REGENERAÇÃO",14520,8526,8908,382,-2.1,439,3.3,24.5,21.9,-240],["SANTA CRUZ DO PIAUÍ",5902,3770,4000,230,-4.7,327,5.3,12.7,12.0,43],["SANTA LUZ",5273,2906,2874,-32,-6.6,414,7.7,14.4,14.4,66],["RIACHO FRIO",4492,2846,2936,90,-4.3,192,4.7,17.4,18.6,132],["RIBEIRO GONÇALVES",5577,3063,2910,-153,-9.0,401,7.5,18.9,17.4,-7],["SANTA ROSA DO PIAUÍ",4981,2531,2769,238,-0.5,126,1.5,23.2,22.2,54],["SANTA CRUZ DOS MILAGRES",3971,2143,2465,322,-3.4,219,4.5,21.8,18.0,-45],["SEBASTIÃO LEAL",4234,2176,2090,-86,-8.2,401,8.4,11.8,11.4,23],["SANTO ANTÔNIO DE LISBOA",6371,3698,3867,169,-4.4,409,6.2,14.3,14.1,83],["SIMPLÍCIO MENDES",10329,6451,6487,36,-4.4,512,5.3,13.9,14.9,226],["SANTO INÁCIO DO PIAUÍ",3644,2330,2407,77,-5.3,180,4.8,16.4,15.1,3],["SIMÕES",12484,7476,7549,73,-5.5,628,5.5,18.4,18.1,137],["SANTANA DO PIAUÍ",4214,2671,2859,188,-0.1,77,1.3,14.5,13.5,-8],["SANTO ANTÔNIO DOS MILAGRES",1955,1262,1236,-26,-4.4,81,4.7,16.9,16.8,8],["SEBASTIÃO BARROS",4633,2727,2554,-173,-11.3,435,10.6,17.7,17.6,68],["SIGEFREDO PACHECO",9278,5811,6007,196,-4.5,415,4.2,14.2,13.5,46],["SÃO BRAZ DO PIAUÍ",4155,2903,2923,20,-2.9,102,2.8,17.0,16.5,12],["SÃO FÉLIX DO PIAUÍ",3968,2163,2210,47,-3.8,243,6.3,18.8,17.7,11],["SÃO FRANCISCO DE ASSIS DO PIAUÍ",4780,2812,2515,-297,-9.5,318,7.8,12.2,12.6,51],["SOCORRO DO PIAUÍ",4300,2523,2548,25,-0.4,94,2.6,19.2,20.7,87],["SÃO GONÇALO DO PIAUÍ",5172,2611,2937,326,-3.0,350,5.3,19.2,16.1,-54],["SUSSUAPARA",6735,4247,4388,141,-4.3,298,4.2,15.2,12.6,-112],["SÃO JOSÉ DO DIVINO",5071,3328,3106,-222,-6.0,232,5.6,14.8,14.9,29],["SÃO JOSÉ DO PEIXE",3371,1983,1893,-90,-5.2,166,6.6,22.3,24.1,99],["SÃO GONÇALO DO GURGUÉIA",2882,1589,1579,-10,-6.1,174,6.7,18.2,21.2,144],["SÃO FRANCISCO DO PIAUÍ",6210,3104,3051,-53,-2.2,171,3.5,22.6,23.4,109],["SÃO JOÃO DA FRONTEIRA",5375,3127,3006,-121,-8.9,418,9.0,19.5,17.9,-5],["SÃO JOSÉ DO PIAUÍ",6004,3882,3825,-57,-2.4,109,2.2,18.1,19.0,94],["SÃO JOÃO DA SERRA",6905,4026,4113,87,-4.2,330,4.9,20.5,17.5,-145],["SÃO JOÃO DA VARJOTA",4131,2530,2780,250,1.2,45,0.3,19.4,17.1,-53],["SÃO JOÃO DA CANABRAVA",4502,3242,3026,-216,-1.4,44,1.8,16.8,17.7,18],["SÃO JOÃO DO PIAUÍ",15077,9220,8975,-245,-2.6,399,3.2,17.9,16.9,-126],["SÃO JOÃO DO ARRAIAL",7625,3964,4112,148,-4.3,496,5.9,19.7,17.1,-93],["SÃO MIGUEL DA BAIXA GRANDE",2835,1480,1473,-7,-9.3,229,8.2,19.5,20.6,100],["SÃO LUIS DO PIAUÍ",3574,1908,2170,262,-5.3,203,5.3,13.0,20.0,371],["SÃO JULIÃO",5605,2885,3497,612,7.8,-208,-6.7,16.9,15.5,-23],["SÃO LOURENÇO DO PIAUÍ",4860,3555,3309,-246,-4.5,194,5.1,15.7,15.2,-35],["SÃO PEDRO DO PIAUÍ",11541,6635,6649,14,-3.5,523,4.8,17.2,16.8,53],["SÃO RAIMUNDO NONATO",27458,17355,17439,84,-5.4,1445,5.5,13.9,15.0,651],["SÃO MIGUEL DO FIDALGO",3027,2003,1933,-70,-4.6,135,5.7,20.8,21.4,42],["TERESINA",592974,301309,296190,-5119,-1.2,14030,2.8,15.2,14.9,-1245],["VALENÇA DO PIAUÍ",17671,9953,10447,494,-1.8,612,3.2,17.0,17.2,275],["TAMBORIL DO PIAUÍ",2989,1694,1804,110,-5.8,181,6.1,19.2,17.6,18],["VERA MENDES",3670,2174,2270,96,-4.0,127,3.6,17.1,17.7,80],["URUÇUÍ",18909,9581,9150,-431,-8.7,1655,8.6,17.6,16.0,-45],["UNIÃO",38750,22208,23153,945,-2.4,1556,3.7,15.7,15.5,439],["SÃO MIGUEL DO TAPUIO",15612,9311,8834,-477,-4.6,589,5.2,25.3,24.8,-87],["TANQUE DO PIAUÍ",2725,1518,1664,146,-2.7,95,2.7,17.2,15.6,10],["VILA NOVA DO PIAUÍ",3001,1873,1886,13,-5.2,157,5.0,11.7,10.2,-23],["WALL FERRAZ",4305,2665,2839,174,-2.4,157,2.7,11.9,11.1,7],["VÁRZEA GRANDE",4174,2315,2281,-34,-3.5,162,4.9,22.0,22.3,66],["ÁGUA BRANCA",15858,8835,8457,-378,-5.2,779,5.3,17.0,16.7,57],["VÁRZEA BRANCA",4694,3219,3211,-8,-3.1,152,3.7,17.4,16.0,-40]];
+const CH=[["TERESINA",5119.0,"-5.119"],["FLORIANO",1230.0,"-1.230"],["BOM JESUS",1011.0,"-1.011"],["QUEIMADA NOVA",834.0,"-834"],["PIRIPIRI",777.0,"-777"],["BAIXA GRANDE DO RIBEIRO",679.0,"-679"],["PIRACURUCA",633.0,"-633"],["SÃO MIGUEL DO TAPUIO",477.0,"-477"],["CORRENTE",435.0,"-435"],["URUÇUÍ",431.0,"-431"],["LUZILÂNDIA",389.0,"-389"],["JOAQUIM PIRES",388.0,"-388"]];
+// colunas: 0 nome,1 eleit,2 lula22,3 lula26,4 dLula,5 ppLula,6 dCampoB,7 ppCampoB,8 abst22%,9 abst26%,10 dAbst
+const fmt=new Intl.NumberFormat('pt-BR');
+const pp=new Intl.NumberFormat('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1,signDisplay:'always'});
+const sg=new Intl.NumberFormat('pt-BR',{signDisplay:'always'});
+const cap=s=>s.toLowerCase().replace(/(^|[\s'’-])(\S)/g,(m,a,b)=>a+b.toUpperCase()).replace(/\b(Da|De|Do|Das|Dos|E)\b/g,x=>x.toLowerCase());
+const rows=D.map(r=>{
+  const dAbstPP=r[9]-r[8];
+  const mob=dAbstPP>=1.5, conv=(r[5]<=-3&&r[7]>=3)||(r[6]>=3000&&r[4]<=-3000);
+  const tipo=mob&&conv?'Os dois':mob?'Mobilizar':conv?'Converter':'Manter';
+  const score=Math.max(0,-r[4])+Math.max(0,r[10]);
+  return {n:cap(r[0]),e:r[1],l22:r[2],l26:r[3],dl:r[4],pl:r[5],db:r[6],pb:r[7],a22:r[8],a26:r[9],da:r[10],dap:dAbstPP,tipo,score};
+});
+// gráfico (dados vêm da página)
+(function(){
+  const el=document.getElementById('grafico');if(!el||typeof CH==='undefined')return;
+  const max=Math.max(...CH.map(r=>r[1]));
+  el.innerHTML=CH.map(r=>`<div class="linha"><div class="n">${cap(r[0])}</div><div class="trilho"><b style="width:${(100*r[1]/max).toFixed(1)}%"></b></div><div class="v">${r[2]}</div></div>`).join('');
+})();
+// tabela
+const cols=[['n','Cidade'],['e','Eleitores'],['l22','Lula 2022'],['l26','Lula 2026'],['dl','Lula (votos)'],['pl','Lula (pontos)'],['db','Bolsonaro/Flávio'],['a22','Abst. 2022 %'],['a26','Abst. 2026 %'],['da','Abst. (pessoas)']];
+let ord={k:'dl',d:1};
+const thead=document.querySelector('#tab thead'),tbody=document.querySelector('#tab tbody');
+function head(){thead.innerHTML='<tr>'+cols.map(([k,t])=>`<th scope="col" data-k="${k}" ${ord.k===k?`aria-sort="${ord.d>0?'ascending':'descending'}"`:''}>${t}${ord.k===k?(ord.d>0?' ▲':' ▼'):''}</th>`).join('')+'</tr>'}
+function draw(){
+  if(!tbody)return;
+  const q=document.getElementById('busca').value.trim().toLowerCase(),f='';
+  let v=rows.filter(r=>(!q||r.n.toLowerCase().includes(q))&&true);
+  v.sort((a,b)=>{const x=a[ord.k],y=b[ord.k];return (typeof x==='string'?x.localeCompare(y,'pt-BR'):x-y)*ord.d});
+  tbody.innerHTML=v.map(r=>`<tr><td>${r.n}</td><td>${fmt.format(r.e)}</td><td>${fmt.format(r.l22)}</td><td>${fmt.format(r.l26)}</td><td class="${r.dl<0?'bad':'good'}">${sg.format(r.dl)}</td><td>${pp.format(r.pl)}</td><td>${sg.format(r.db)}</td><td>${String(r.a22).replace('.',',')}</td><td>${String(r.a26).replace('.',',')}</td><td class="${r.da>0?'bad':'good'}">${sg.format(r.da)}</td></tr>`).join('');
+  document.getElementById('contagem').textContent=`${v.length} de ${rows.length} cidades. Ordenado por ${cols.find(c=>c[0]===ord.k)[1].toLowerCase()}.`;
+  head();
+}
+thead&&thead.addEventListener('click',e=>{const th=e.target.closest('th');if(!th)return;const k=th.dataset.k;ord=ord.k===k?{k,d:-ord.d}:{k,d:k==='n'||k==='tipo'?1:-1};draw()});
+document.getElementById('busca')&&document.getElementById('busca').addEventListener('input',draw);
+
+draw();
+// menu: seção atual
+(function(){
+  const links=[...document.querySelectorAll('.nav a')];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-30% 0px -60% 0px'});
+  document.querySelectorAll('main section').forEach(s=>io.observe(s));
+})();
+</script>
+</body>
+</html>

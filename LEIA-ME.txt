@@ -1,0 +1,16 @@
+ESCOLHA FÁCIL — como publicar no Hostinger (escolhafacil.online)
+
+1. hPanel do Hostinger > Sites > Gerenciador de Arquivos > pasta public_html.
+2. Envie o arquivo escolha-facil.zip para public_html e clique em "Extrair".
+   Os arquivos (index.html, assets/, cards/, t/, .htaccess...) devem ficar direto dentro de public_html.
+3. Ative o SSL grátis (Segurança > SSL). O .htaccess já manda todo mundo para https.
+4. Crie o e-mail contato@escolhafacil.online (hPanel > E-mails). Ele aparece no rodapé do site.
+5. Teste: abra o site no celular, toque em "Compartilhar" em uma pergunta e mande para você mesma.
+   A prévia do WhatsApp deve mostrar o card roxo da pergunta.
+
+O QUE TEM AQUI
+- index.html ............ página principal, com as perguntas por tema
+- t/NOME/ ............... uma página para cada pergunta (é o link que vai no WhatsApp)
+- cards/NOME.png ........ imagem de cada pergunta (1080 x 1350, formato de post)
+- assets/ ............... estilo, fonte, código e o PDF do programa de governo
+- escolha-facil-estados/  página "Quem vota, decide": estados.html (escolher o estado) + uma página por estado

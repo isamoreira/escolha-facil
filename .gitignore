@@ -1,0 +1,8 @@
+# Cópia antiga da pasta de estados (o site usa escolha-facil-estados/)
+/estados/
+# Página padrão do Hostinger
+/default.php
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

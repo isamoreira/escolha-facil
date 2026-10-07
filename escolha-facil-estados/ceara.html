@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escolha fácil · Ceará</title>
+<meta name="description" content="Como Ceará votou em 2022 e no 1º turno de 2026, e como você pode ajudar no 2º turno de 25 de outubro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Atkinson+Hyperlegible+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/comum.css">
+<style>
+/* Mesma identidade do escolhafacil.online: roxo e amarelo, Atkinson Hyperlegible, cantos de 16px.
+   Estrutura: faixa fixa com navegação, uma coluna de leitura, tabelas e gráficos em largura total. */
+:root{
+  --papel:#FFFFFF; --fundo:#F7F4FB; --cartao:#FFFFFF; --tinta:#121014; --tinta-2:#3F3A46; --linha:#E3DEEA;
+  --acento:#5B21B6; --acento-suave:#F1EAFC; --amarelo:#FFD400; --verde:#0E7A43; --verde-suave:#E3F4EA;
+  --vermelho:#B42318; --vermelho-suave:#FDECEA; --forte:#3B0F70; --forte-tinta:#FFFFFF; --foco:#121014;
+  --raio:16px; --sombra:0 1px 2px rgba(18,16,20,.05),0 8px 24px rgba(59,15,112,.07);
+  --f-corpo:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-num:"Atkinson Hyperlegible Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:400 18px/1.55 var(--f-corpo);padding-inline:16px}
+a{color:var(--acento)}
+:focus-visible{outline:3px solid var(--foco);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1080px;margin-inline:auto}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;background:var(--amarelo);color:#121014;padding:8px 12px;z-index:50}
+/* topo */
+.ef-topo,.ef-rodape{margin-inline:-16px}
+.uf-atual{background:var(--acento-suave);border-color:var(--acento-suave)!important;color:var(--acento)!important}
+.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--papel);border-bottom:1px solid var(--linha);margin-inline:-16px;padding:10px 16px 0}
+.topo .wrap{display:flex;flex-direction:column;gap:6px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px}
+.marca i{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--amarelo);color:#121014;font-style:normal}
+.marca span.t{margin-left:auto;font-size:13px;font-weight:700;background:var(--acento-suave);color:var(--acento);padding:4px 10px;border-radius:99px}
+.nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--tinta);font-weight:700;font-size:15px;padding:7px 12px;border:2px solid var(--linha);border-radius:99px}
+.nav a:hover,.nav a[aria-current="true"]{border-color:var(--acento);background:var(--acento-suave);color:var(--acento)}
+/* blocos */
+section{padding-block:44px 8px}
+h1{font-size:clamp(40px,7vw,68px);line-height:1.02;margin:0 0 16px;letter-spacing:-.03em}
+h2{font-size:clamp(26px,4vw,36px);line-height:1.1;margin:0 0 10px;letter-spacing:-.01em;text-wrap:balance}
+h3{font-size:21px;line-height:1.2;margin:0 0 6px}
+p{margin:0 0 12px;max-width:68ch}
+.lead{font-size:20px;color:var(--tinta-2)}
+.marcado{background:linear-gradient(transparent 62%,var(--amarelo) 62%);padding-inline:2px;color:inherit}
+.selo{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:99px;border:2px solid var(--acento);color:var(--acento)}
+.selo.am{background:var(--amarelo);border-color:var(--amarelo);color:#121014}
+.selo.vd{border-color:var(--verde);color:var(--verde)}.selo.vm{border-color:var(--vermelho);color:var(--vermelho)}
+.aviso{display:flex;gap:10px;align-items:flex-start;background:var(--amarelo);color:#121014;border-radius:var(--raio);padding:12px 16px;font-weight:700;font-size:16px;margin-block:18px}
+.aviso span{max-width:80ch}
+.grade{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.card{background:var(--cartao);border:2px solid var(--linha);border-radius:var(--raio);padding:18px;min-width:0}
+.card.s{box-shadow:var(--sombra)}
+.card.forte{background:var(--forte);color:var(--forte-tinta);border-color:var(--forte)}
+.card.forte a{color:var(--amarelo)}
+.num{font:700 clamp(30px,5vw,42px)/1 var(--f-num);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.rot{font-size:15px;color:var(--tinta-2);margin-top:6px}
+.card.forte .rot{color:#DCCFF5}
+.bad{color:var(--vermelho)}.good{color:var(--verde)}
+ul.lista{margin:0;padding-left:20px}ul.lista li{margin-bottom:6px;max-width:68ch}
+ul.lista.sem{list-style:none;padding:0}
+/* grafico */
+.barras{display:grid;gap:8px;margin-top:14px}
+.linha{display:grid;grid-template-columns:minmax(96px,170px) 1fr 72px;gap:10px;align-items:center}
+.linha .v{font:700 14px var(--f-num);text-align:right;font-variant-numeric:tabular-nums}
+.linha .n{font-size:15px;font-weight:700;min-width:0;overflow-wrap:anywhere}
+.trilho{position:relative;height:30px;background:var(--acento-suave);border-radius:8px;overflow:hidden}
+.trilho b{position:absolute;inset:0 auto 0 0;background:var(--acento);border-radius:8px}
+.legenda{display:flex;flex-wrap:wrap;gap:14px;font-size:15px;color:var(--tinta-2);margin-top:10px}
+.legenda i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+/* tabela */
+.ferr{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.ferr input,.ferr select{font:inherit;font-size:16px;padding:10px 12px;border:2px solid var(--linha);border-radius:12px;background:var(--cartao);color:var(--tinta);min-width:0}
+.ferr input{flex:1 1 220px}
+.tabela{overflow:auto;max-height:min(440px,62vh);overscroll-behavior:contain;border:2px solid var(--linha);border-radius:var(--raio);background:var(--cartao)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--linha);white-space:nowrap}
+th:first-child{z-index:3}th:first-child,td:first-child{z-index:1;text-align:left;position:sticky;left:0;background:var(--cartao);font-weight:700;white-space:normal;min-width:150px}
+th{z-index:2;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--tinta-2);cursor:pointer;user-select:none;background:var(--cartao);position:sticky;top:0}
+th[aria-sort]{color:var(--acento)}
+td{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+td:first-child{font-family:var(--f-corpo)}
+td.t{text-align:left;font-family:var(--f-corpo)}
+.cont{font-size:15px;color:var(--tinta-2);margin-top:8px}
+.btn{font:700 16px var(--f-corpo);padding:11px 18px;border-radius:12px;border:2px solid var(--acento);background:var(--acento);color:#fff;cursor:pointer}
+.btn.sec{background:var(--cartao);color:var(--acento)}
+/* passos */
+ol.passos{list-style:none;counter-reset:p;margin:0;padding:0;display:grid;gap:12px}
+ol.passos li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--cartao);border:2px solid var(--linha);border-radius:var(--raio);padding:16px}
+ol.passos li::before{content:counter(p);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--amarelo);color:#121014;font:700 22px var(--f-num)}
+ol.passos strong{display:block;font-size:19px}
+.fala{border-left:5px solid var(--amarelo);padding:4px 0 4px 14px;margin:8px 0;font-style:normal;color:var(--tinta)}
+.msg{background:var(--verde-suave);border:2px solid var(--verde);border-radius:var(--raio);padding:14px 16px;white-space:pre-wrap;font-size:16px;margin:8px 0}
+details{background:var(--cartao);border:2px solid var(--linha);border-radius:var(--raio);padding:0 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style-position:outside}
+details[open] summary{border-bottom:1px solid var(--linha);margin-bottom:10px}
+details p:last-child{padding-bottom:6px}
+.check label{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--linha);cursor:pointer}
+.check input{width:24px;height:24px;accent-color:var(--acento);flex:none;margin-top:2px}
+.tempo{display:grid;gap:12px}
+.fase{display:grid;grid-template-columns:130px 1fr;gap:16px;background:var(--cartao);border:2px solid var(--linha);border-radius:var(--raio);padding:16px}
+.fase .q{font:700 20px var(--f-num)}.fase .q small{display:block;font:400 14px var(--f-corpo);color:var(--tinta-2)}
+.fase.dia{background:var(--forte);color:var(--forte-tinta);border-color:var(--forte)}.fase.dia .q small{color:#DCCFF5}
+@media (max-width:640px){.fase{grid-template-columns:1fr;gap:6px}.linha{grid-template-columns:96px 1fr 62px;gap:8px}body{font-size:17px}}
+.fonte-dados{padding-block:48px;color:var(--tinta-2);font-size:15px}
+.fonte-dados p{max-width:80ch}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#cenario">Pular para o conteúdo</a>
+<header class="ef-topo">
+  <div class="ef-wrap ef-topo__in">
+    <a class="ef-marca" href="../index.html" aria-label="Escolha fácil, página inicial"><span class="ef-marca__check" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Escolha fácil</a>
+    <nav class="ef-menu" aria-label="Menu principal"><ul><li><a href="../index.html">Início</a></li><li><a href="estados.html" aria-current="page">Estados</a></li><li><a href="../gerador/index.html">Gerador de peças</a></li><li><a href="../contribua/index.html">Contribua</a></li></ul></nav>
+  </div>
+</header>
+<header class="topo"><div class="wrap">
+ <nav class="nav" aria-label="Seções"><a class="uf-atual" href="estados.html">CE · trocar de estado</a><a href="#cenario">Os números</a><a href="#municipios">Sua cidade</a><a href="#ajude">Como ajudar</a><a href="#regras">Jeito certo</a></nav>
+</div></header>
+<main class="wrap">
+<section id="cenario" style="padding-top:36px">
+ <span class="selo am">2º turno · domingo, 25 de outubro</span>
+ <h1 style="margin-top:14px">Quem vota, <span class="marcado">decide</span>.</h1>
+ <p class="lead">No 1º turno, muita gente no Ceará ficou em casa. Cada uma dessas pessoas pode mudar o 2º turno.<br>Veja os números. Depois fale com quem você conhece.</p>
+ <p class="cont" style="margin-top:0">Toda informação aqui tem fonte: dados abertos do TSE.</p>
+ <div class="grade g4" id="kpis" style="margin-top:22px"><div class="card forte s"><div class="num">1,09 mi</div><div class="rot">de pessoas não foram votar no 1º turno no Ceará. É cerca de 1 em 6 eleitores.</div></div><div class="card s"><div class="num">13,0%</div><div class="rot">de abstenção em Fortaleza, a maior cidade. Em 2022 era 16,5%. Hoje são 74.996 pessoas a menos em casa.</div></div><div class="card s"><div class="num">48</div><div class="rot">cidades do estado onde a abstenção subiu em relação ao 1º turno de 2022.</div></div><div class="card s"><div class="num">70 mil</div><div class="rot">eleitores: é o tamanho de cada 1 ponto de abstenção.</div></div></div>
+ <h2 style="margin-top:38px">Seu voto conta. O de quem você conhece também.</h2>
+ <div class="grade g2">
+  <div class="card"><span class="selo vm">Pergunta 1</span><h3 style="margin-top:10px">Você conhece alguém que não costuma votar?</h3><p>Pode ser por trabalho, por distância ou por cansaço. Uma mensagem no sábado e um plano para o domingo já mudam a história. Em Juazeiro do Norte, a abstenção foi de 15,9% para 15,7%: 2.190 pessoas a mais em casa.</p></div>
+  <div class="card"><span class="selo">Pergunta 2</span><h3 style="margin-top:10px">Você conhece alguém que ainda tem dúvida?</h3><p>Muita gente decide pelo que sente no bolso, na saúde, no emprego. Em Boa Viagem, o apoio ao Lula caiu 9,2 pontos desde 2022. Conversa sem briga e com fonte funciona.</p></div>
+ </div>
+ <h2 style="margin-top:38px">Onde o Lula perdeu mais votos desde 2022</h2>
+ <p>Comparação entre o 1º turno de 2022 e o de 2026. Em Fortaleza a diferença é de 5.007 votos. É onde a conversa mais importa.</p>
+ <div class="barras" id="grafico" role="img" aria-label="Gráfico de barras: Onde o Lula perdeu mais votos desde 2022"></div>
+ <div class="legenda"><span><i style="background:var(--acento)"></i>Votos a menos que em 2022</span></div>
+</section>
+<section id="municipios">
+ <h2>Como foi na sua cidade?</h2>
+ <p>Procure pelo nome. Toque no título de uma coluna para ordenar.</p>
+ <div class="ferr"><input id="busca" type="search" placeholder="Digite o nome da sua cidade" aria-label="Buscar cidade"></div>
+ <div class="tabela" tabindex="0" role="region" aria-label="Tabela por cidade, role para ver mais" id="tabela-wrap"><table id="tab"><thead></thead><tbody></tbody></table></div>
+ <p class="cont" id="contagem"></p>
+ <p class="cont">Fonte: TSE, dados abertos, votos para presidente no 1º turno de 2022 e no 1º turno de 2026. "Bolsonaro/Flávio" mostra Bolsonaro em 2022 e Flávio Bolsonaro em 2026. Abst. = abstenção, quem não foi votar.</p>
+</section>
+<section id="ajude">
+ <h2>Você pode ajudar. Leva 2 minutos.</h2>
+ <p class="lead">Fale com quem você conhece: vizinha, colega, parente, quem pega o ônibus com você. Não precisa ser especialista.</p>
+ <ol class="passos">
+  <li><div><strong>Pergunte</strong>Comece com uma pergunta, não com um discurso. <div class="fala">"O que mais pesa no seu dia hoje: preço, saúde, trabalho, segurança?"</div></div></li>
+  <li><div><strong>Escute</strong>Repita com as palavras da pessoa. Não corrija e não discuta.</div></li>
+  <li><div><strong>Mostre</strong>Abra o tema dela em escolhafacil.online. Leia uma pergunta e veja o selo: <em>Já existe</em>, <em>Já começou</em> ou <em>Está no programa</em>. Toque em "Entenda" para ver a fonte.</div></li>
+  <li><div><strong>Combine</strong>Peça algo pequeno. <div class="fala">"Você vai de manhã ou à tarde? Posso te mandar um lembrete?"</div></div></li>
+ </ol>
+
+ <h3 style="margin-top:28px">Quer mandar uma mensagem? Copie esta.</h3>
+ <div class="msg">Oi, [nome]! Domingo, dia 25, é o 2º turno. Dá para votar das 8h às 17h. Leve um documento com foto (pode ser o e-Título no celular). Na urna, é 1 e depois 3. Se quiser ver as perguntas e as fontes: escolhafacil.online</div>
+ <p class="cont">Mande só para quem conhece e aceita receber.</p>
+
+ <h3 style="margin-top:28px">Como votar no dia 25</h3>
+ <ol class="passos">
+  <li><div><strong>Leve um documento com foto</strong>Pode ser o e-Título no celular.</div></li>
+  <li><div><strong>Vá ao seu local de votação entre 8h e 17h</strong>Horário de Brasília. Não sabe onde vota? Consulte no site do TSE.</div></li>
+  <li><div><strong>Na urna, digite 1 e depois 3</strong></div></li>
+  <li><div><strong>Confira a foto e aperte a tecla verde CONFIRMA</strong></div></li>
+ </ol>
+</section>
+<section id="regras">
+ <h2>Faça do jeito certo</h2>
+ <p>Para a sua conversa ajudar e não dar problema. Isto não é parecer jurídico. Antes de imprimir ou distribuir material, consulte a Justiça Eleitoral ou um advogado.</p>
+ <div class="grade g2">
+  <div class="card"><span class="selo vd">Pode</span>
+   <ul class="lista" style="margin-top:12px"><li>Conversar, ouvir e mostrar a fonte.</li><li>Compartilhar as perguntas do site.</li><li>Lembrar da data, do horário e do documento.</li><li>Ajudar a achar o local de votação no site do TSE.</li></ul></div>
+  <div class="card"><span class="selo vm">Não pode</span>
+   <ul class="lista" style="margin-top:12px"><li>Dar ou prometer dinheiro, brinde ou favor por voto.</li><li>Oferecer transporte a eleitores.</li><li>Criar perfil falso ou usar robô.</li><li>Passar adiante boato ou montagem.</li><li>Usar o horário de trabalho ou recursos públicos, se for servidor.</li></ul></div>
+ </div>
+</section>
+</main>
+<div class="wrap fonte-dados"><p><strong>Escolha fácil.</strong> Feito por um coletivo de pessoas voluntárias. Dados: TSE (dados abertos e portal de resultados). Total de 184 municípios no Ceará. <a href="estados.html">Escolher outro estado</a>.</p></div>
+<footer class="ef-rodape">
+    <div class="ef-wrap">
+      <div class="ef-rodape__in">
+        <div>
+          <a class="ef-marca" href="../index.html"><span class="ef-marca__check" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Escolha fácil</a>
+          <p>Perguntas simples. Respostas com fonte.</p>
+          <p><strong>Manifestação espontânea de eleitoras e eleitores.</strong> Responsável: Coletivo Escolha Fácil.</p>
+        </div>
+        <nav aria-labelledby="ef-rod-nav">
+          <h2 class="ef-rodape__tit" id="ef-rod-nav">Navegue</h2>
+          <ul>
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../escolha-facil-estados/estados.html">Estados: quem vota, decide</a></li>
+            <li><a href="../gerador/index.html">Gerador de peças</a></li>
+            <li><a href="../contribua/index.html">Contribua com o coletivo</a></li>
+            <li><a href="../assets/programa-de-governo-lula-2026.pdf" target="_blank" rel="noopener">Programa de governo (PDF)<span class="ef-sr"> (abre em nova aba)</span></a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="ef-rodape__tit">Fale com a gente</h2>
+          <ul>
+            <li><a href="mailto:contato@escolhafacil.online"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>contato@escolhafacil.online</a></li>
+            <li><a href="https://www.instagram.com/escolhafacil.online/" target="_blank" rel="noopener me"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>@escolhafacil.online<span class="ef-sr"> no Instagram (abre em nova aba)</span></a></li>
+          </ul>
+          <p style="margin-top:12px">Achou alguma informação errada? Escreva para a gente. Nós corrigimos.</p>
+        </div>
+      </div>
+      <div class="ef-rodape__base">
+        <p>Este site não usa cookies e não guarda dados de quem visita.</p>
+        <p>Atualizado em 6 de outubro de 2026.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+const D=[["ABAIARA",7775,4870,4634,-236,-6.7,442,7.2,17.9,19.8,248],["ACOPIARA",38571,23642,23458,-184,-2.8,2203,6.8,21.4,16.0,-2254],["ACARAÚ",49197,24551,23817,-734,-6.1,3979,9.2,19.1,19.0,680],["AIUABA",11440,7010,7142,132,-1.3,372,4.0,26.2,21.0,-680],["ACARAPE",12546,5996,6079,83,-3.5,722,4.7,13.2,13.4,149],["ALCÂNTARAS",10265,5755,5939,184,-1.4,634,7.7,21.3,20.2,16],["ALTO SANTO",12108,7772,7184,-588,-6.5,655,6.6,21.8,16.1,-837],["AQUIRAZ",69632,31902,33019,1117,-4.3,5002,5.9,14.0,14.2,1254],["ARACATI",57417,30215,29308,-907,-3.9,3059,5.9,14.7,15.1,607],["ANTONINA DO NORTE",7089,4157,4169,12,-2.1,257,4.6,28.4,22.9,-455],["ALTANEIRA",6949,4283,4500,217,-2.7,319,5.3,17.4,18.4,196],["ARARIPE",17494,11229,11246,17,-4.7,1004,7.1,27.4,18.9,-1663],["ARATUBA",12289,7041,6776,-265,-5.6,911,8.7,16.2,16.7,180],["AMONTADA",36349,19707,19857,150,-4.9,2392,7.1,19.1,18.5,330],["ASSARÉ",18914,11787,11066,-721,-5.5,991,6.9,26.4,20.6,-1354],["APUIARÉS",12696,7592,7375,-217,-4.6,709,6.3,14.8,15.5,201],["BANABUIÚ",15673,9706,9529,-177,-5.4,993,7.1,16.0,15.9,140],["ARACOIABA",24943,14809,14493,-316,-4.8,1579,6.6,14.4,12.7,-288],["AURORA",20292,12040,11216,-824,-6.7,1423,9.1,21.7,20.2,-233],["ARARENDÁ",9705,5441,5559,118,-4.1,594,6.3,23.4,16.7,-638],["BARBALHA",53415,28304,28658,354,-5.5,3832,7.3,16.5,16.4,886],["BAIXIO",5464,3512,3608,96,-0.6,203,4.2,21.8,16.1,-336],["ARNEIROZ",6939,4093,3885,-208,-4.1,360,6.8,23.6,21.3,-196],["BATURITÉ",28552,16053,15878,-175,-4.5,1619,6.1,16.0,16.1,349],["BELA CRUZ",21553,10385,10504,119,-2.9,1491,7.6,19.0,17.6,-32],["BEBERIBE",46979,23925,24758,833,-2.6,2559,4.9,17.7,13.8,-1490],["BARRO",17005,10402,10047,-355,-3.5,696,5.5,23.5,22.4,-110],["CAMOCIM",50991,24217,24861,644,-1.5,3602,8.1,19.2,19.1,512],["BARROQUINHA",15207,8307,7660,-647,-9.0,1573,13.1,19.2,20.8,496],["BOA VIAGEM",42595,26608,24219,-2389,-9.2,3063,9.1,19.6,19.0,60],["BREJO SANTO",36964,22469,22036,-433,-3.8,1611,5.1,17.4,17.2,220],["CANINDÉ",60219,34884,34478,-406,-4.7,3336,6.1,18.8,17.2,-445],["CAMPOS SALES",20555,12689,12519,-170,-4.5,922,5.4,27.1,19.8,-1727],["CASCAVEL",60466,29681,29406,-275,-3.7,3612,6.1,15.4,15.1,390],["CARIRIAÇU",24954,14877,14590,-287,-5.0,1577,7.4,19.2,17.3,-296],["CARIRÉ",15391,8182,8007,-175,-2.8,832,6.8,19.0,19.1,123],["CARIÚS",15846,9694,9699,5,-3.8,691,4.9,17.3,17.2,148],["CAUCAIA",249622,114030,114126,96,-2.6,13073,5.0,13.7,13.7,1968],["CARIDADE",17474,10777,9972,-805,-7.7,1184,8.1,15.7,16.0,193],["CARNAUBAL",14575,6933,6757,-176,-5.0,998,8.2,22.7,20.8,-105],["CATUNDA",9313,5611,5840,229,-3.2,598,7.2,18.2,17.6,93],["CEDRO",20348,12164,11931,-233,-1.4,844,5.4,19.7,19.3,-29],["BARREIRA",19586,8771,9176,405,-2.9,1465,6.1,13.3,13.6,330],["CHAVAL",10966,6493,6298,-195,-2.7,414,5.0,21.6,21.4,26],["CATARINA",9892,5308,5288,-20,-5.8,580,7.3,28.7,25.4,-203],["CRATEÚS",60099,33294,33967,673,-3.3,3937,7.1,19.0,16.3,-1068],["CHOROZINHO",18301,9953,10147,194,-3.1,1115,6.1,14.8,13.7,-26],["CAPISTRANO",16205,9864,9626,-238,-4.7,1023,7.1,17.1,15.3,-227],["CRATO",95932,63197,61083,-2114,-4.1,4452,5.4,13.6,13.8,656],["CHORÓ",11642,7288,6995,-293,-4.1,532,5.7,17.4,18.4,174],["CROATÁ",15338,8365,7967,-398,-7.3,1187,9.9,23.0,21.7,-9],["COREAÚ",19700,10985,10639,-346,-3.8,1480,9.3,19.6,17.4,-359],["DEPUTADO IRAPUAN PINHEIRO",7474,4840,4534,-306,-7.0,534,8.8,19.7,16.2,-262],["FORTALEZA",1795713,802009,797002,-5007,0.3,56089,4.2,16.5,13.0,-74996],["ERERÉ",5605,3494,3476,-18,-3.1,231,4.9,23.4,18.3,-303],["FRECHEIRINHA",13849,7098,6692,-406,-9.1,1613,13.2,16.4,15.7,104],["FORQUILHA",19740,9181,9481,300,-0.8,1725,9.8,14.7,13.8,-8],["GENERAL SAMPAIO",8274,4645,4759,114,-5.1,533,6.8,19.3,18.9,116],["GRANJEIRO",6328,3705,4014,309,-4.4,344,5.6,23.3,18.8,-160],["GRANJA",44060,27017,26283,-734,-3.1,1883,5.6,19.2,19.7,520],["EUSÉBIO",59877,21790,22791,1001,-5.7,6070,7.0,14.9,15.7,1968],["FORTIM",17196,8141,8552,411,-5.2,1345,6.2,13.0,14.7,625],["FARIAS BRITO",17579,11245,11341,96,-3.8,891,5.8,14.6,15.9,450],["GROAÍRAS",9842,4506,4258,-248,-6.1,932,11.5,16.2,18.6,378],["GUARAMIRANGA",6646,3579,3543,-36,-6.2,503,8.4,16.3,18.0,240],["GUARACIABA DO NORTE",34685,17541,16748,-793,-7.1,2985,10.4,22.2,20.3,-218],["CRUZ",23786,10695,10525,-170,-6.5,2045,8.5,18.5,17.7,256],["GRAÇA",12854,7693,7532,-161,-8.3,1018,9.5,28.8,18.3,-1518],["IBICUITINGA",12514,7232,6902,-330,-7.1,932,8.0,16.3,14.1,-195],["HIDROLÂNDIA",16000,8753,9004,251,-3.4,1217,8.2,17.9,16.4,-56],["GUAIÚBA",20884,11888,12008,120,-3.7,1257,6.0,13.2,13.2,203],["IBARETAMA",13532,7809,8395,586,-1.3,637,4.4,14.7,15.3,287],["HORIZONTE",62776,28683,29252,569,-3.4,3534,4.7,15.1,14.6,507],["ICAPUÍ",17718,9430,8929,-501,-6.3,1243,7.5,13.7,14.8,372],["IBIAPINA",20158,9813,9010,-803,-8.8,2208,13.7,19.9,20.0,314],["INDEPENDÊNCIA",21208,11777,11873,96,-2.7,1090,5.5,23.7,16.8,-1597],["IPAPORANGA",10349,5991,5753,-238,-6.3,658,7.7,21.5,19.8,-73],["ICÓ",51307,28700,28786,86,-3.0,2321,5.2,21.4,20.2,-101],["IPAUMIRIM",9459,5875,5919,44,-2.6,377,4.5,22.0,16.1,-580],["IPUEIRAS",30943,16852,15705,-1147,-5.8,2149,9.3,30.6,21.8,-3626],["IGUATU",71278,44168,44295,127,-2.7,2488,3.7,15.3,14.8,138],["IRAUÇUBA",19467,11897,11742,-155,-3.7,1111,6.5,14.8,15.4,283],["ITAITINGA",38235,15703,17681,1978,-6.7,4221,7.2,13.2,13.2,1078],["IPU",33130,19207,18920,-287,-6.0,2411,8.0,25.5,15.4,-3712],["ITAPIÚNA",16385,9107,8761,-346,-4.8,1164,8.5,17.6,17.2,57],["IRACEMA",12096,7258,6861,-397,-6.6,750,7.7,22.9,20.6,-240],["ITAIÇABA",7213,3852,3735,-117,-4.4,512,7.8,14.1,14.0,50],["ITATIRA",19602,11115,10661,-454,-6.7,1139,7.3,22.9,23.2,318],["JAGUARETAMA",15538,9622,9178,-444,-6.2,1010,7.7,21.4,16.8,-756],["JAGUARIBE",29394,17139,16798,-341,-4.2,1300,5.1,20.5,19.2,-210],["ITAPAJÉ",39662,19627,19007,-620,-3.5,2242,6.2,14.7,15.3,509],["ITAPIPOCA",103228,57530,60812,3282,-2.9,6720,6.1,14.4,13.5,513],["JARDIM",22592,12943,12667,-276,-5.7,1485,8.3,24.8,21.7,-504],["JATI",7093,4221,4270,49,-1.6,261,4.5,20.8,20.1,13],["ITAREMA",34502,15197,15771,574,-3.0,2556,7.1,20.0,18.7,126],["JAGUARUANA",28915,14582,14451,-131,-3.0,1584,6.0,16.3,15.3,-82],["JAGUARIBARA",8993,5341,5608,267,-3.3,432,4.3,18.7,13.5,-400],["JIJOCA DE JERICOACOARA",21575,9297,9363,66,-8.7,2371,10.3,18.2,18.8,727],["LAVRAS DA MANGABEIRA",24134,13969,14299,330,-1.8,1289,6.4,21.6,19.5,-329],["JUAZEIRO DO NORTE",200346,109039,108543,-496,-5.5,12501,6.3,15.9,15.7,2190],["LIMOEIRO DO NORTE",46944,27138,26541,-597,-3.0,1941,4.7,14.9,14.8,133],["MARCO",23434,8924,9649,725,0.3,1188,3.5,17.2,15.1,-226],["MARACANAÚ",179488,82217,81340,-877,-3.2,10211,5.3,12.0,12.4,1959],["MASSAPÊ",31825,16849,16904,55,-3.7,2665,9.1,19.8,13.4,-2059],["MARTINÓPOLE",10730,6698,6561,-137,-5.7,715,7.6,14.5,15.1,178],["MARANGUAPE",83544,41819,41673,-146,-3.4,4606,5.1,13.8,12.8,-248],["MAURITI",36552,20297,20987,690,-3.3,2292,6.6,19.3,16.9,-459],["MILAGRES",22637,14369,14430,61,-2.8,819,4.3,20.1,18.7,-165],["MISSÃO VELHA",30981,18688,18420,-268,-2.8,1182,4.7,17.9,19.9,957],["MIRAÍMA",12141,7647,7603,-44,-3.7,649,6.2,17.2,16.9,59],["MERUOCA",13277,7237,7134,-103,-4.5,1324,11.9,14.3,15.0,258],["JUCÁS",20189,10979,10723,-256,-4.2,1164,7.2,22.7,20.9,-231],["MONSENHOR TABOSA",14947,8699,8152,-547,-7.3,1157,9.7,27.7,19.9,-1380],["MORADA NOVA",56913,30684,27829,-2855,-7.8,4831,10.4,16.3,16.4,409],["MADALENA",14764,8908,8623,-285,-6.2,899,7.0,17.3,17.6,217],["MOMBAÇA",32520,18823,18333,-490,-3.2,1295,5.1,22.1,21.3,-96],["MORAÚJO",8262,4511,4443,-68,-5.2,619,8.7,16.5,18.6,303],["MUCAMBO",12736,6824,6515,-309,-4.8,810,8.4,29.7,21.1,-1345],["NOVA OLINDA",12790,7725,7654,-71,-4.9,748,6.5,17.2,16.7,70],["NOVA RUSSAS",24866,12565,12738,173,-2.3,1150,4.9,25.3,18.8,-1759],["NOVO ORIENTE",23218,13621,12598,-1023,-5.8,1393,8.3,26.2,22.7,-998],["OCARA",25191,14025,14664,639,-3.4,1572,5.4,13.7,11.6,-233],["MILHÃ",11291,7223,6941,-282,-5.8,714,7.4,22.3,16.2,-749],["PACAJUS",54458,25491,25412,-79,-3.6,3506,6.1,13.5,12.6,-76],["ORÓS",17682,10357,9994,-363,-3.6,650,4.6,26.8,19.8,-1558],["MORRINHOS",19053,7110,7275,165,-3.8,1515,5.9,18.1,15.8,-136],["PACOTI",10776,6134,6128,-6,-3.0,601,6.4,17.8,16.3,-81],["PACATUBA",57825,26037,26240,203,-4.8,4427,6.6,13.2,14.2,1398],["PACUJÁ",6659,3788,3766,-22,-6.6,570,10.5,23.2,19.4,-187],["MULUNGU",9751,5192,5380,188,-4.6,686,6.9,16.9,17.0,195],["PALHANO",9841,4704,4690,-14,-5.2,1000,10.4,15.0,15.0,145],["PALMÁCIA",9908,5469,5319,-150,-6.3,754,8.3,16.8,15.8,13],["PENAFORTE",8694,5128,5295,167,-2.9,441,5.5,16.0,16.0,120],["PARAIPABA",27584,12787,12809,22,-3.6,1760,5.8,14.3,14.6,389],["PEDRA BRANCA",34612,21436,20314,-1122,-5.6,1675,6.4,22.7,22.1,42],["PARAMBU",27269,13672,12368,-1304,-5.9,1664,8.9,28.5,24.2,-1549],["PEREIRO",14487,8851,8549,-302,-4.0,626,5.5,26.6,19.6,-1240],["PENTECOSTE",32386,19117,18206,-911,-4.6,1591,5.7,15.5,16.0,339],["PARACURU",33717,16787,16637,-150,-4.5,2123,6.4,16.3,16.6,523],["PINDORETAMA",21261,10761,11798,1037,-2.0,1008,3.1,15.0,14.9,373],["PARAMOTI",10188,6159,6004,-155,-3.7,522,5.9,15.7,15.5,44],["PORTEIRAS",14641,8897,9360,463,-1.1,546,4.1,21.1,19.2,-110],["POTIRETAMA",5834,4029,3617,-412,-11.3,554,10.7,15.1,12.7,-123],["PORANGA",10071,6094,6142,48,-4.3,522,6.0,28.0,19.4,-989],["POTENGI",8102,5108,5486,378,-2.8,403,5.5,22.1,15.9,-425],["PIRES FERREIRA",8610,4928,5117,189,-3.4,679,8.2,19.4,13.1,-491],["QUIXADÁ",61599,29780,29771,-9,-2.8,3081,4.9,16.4,15.4,-95],["QUIXERÉ",18875,10463,10153,-310,-5.7,989,5.6,15.8,15.7,179],["QUIXERAMOBIM",60112,35247,35579,332,-2.6,3214,5.9,20.8,16.4,-2584],["PIQUET CARNEIRO",12098,7778,6979,-799,-8.3,894,9.5,18.5,18.4,25],["REDENÇÃO",24248,12827,12747,-80,-2.8,1229,5.7,16.5,16.6,211],["RERIUTABA",15853,9278,9501,223,-1.6,855,6.1,25.2,16.0,-1675],["SABOEIRO",12621,7398,7532,134,-3.6,555,4.8,27.2,19.3,-1119],["QUITERIANÓPOLIS",16987,10199,9882,-317,-4.4,841,6.1,24.0,18.8,-973],["SANTA QUITÉRIA",33618,20291,19711,-580,-2.6,1865,6.9,17.8,16.7,-255],["SALITRE",14839,8462,8457,-5,-7.2,1666,12.9,22.3,17.4,-594],["RUSSAS",58537,31463,30006,-1457,-4.7,3240,6.3,15.2,15.1,289],["SANTANA DO ACARAÚ",25778,15479,15321,-158,-2.9,1307,5.8,18.7,15.0,-974],["QUIXELÔ",14956,9805,9804,-1,-2.5,661,5.0,13.3,13.9,193],["SOBRAL",153073,66697,71616,4919,4.2,10835,9.1,15.3,15.3,573],["SÃO BENEDITO",37548,19345,17707,-1638,-7.7,3267,11.1,20.8,19.3,-318],["SENADOR SÁ",7038,3852,3995,143,-3.2,432,5.9,17.7,13.6,-225],["SENADOR POMPEU",20302,11280,10688,-592,-3.2,1279,8.1,21.5,16.2,-1303],["TABULEIRO DO NORTE",26004,15075,15386,311,-1.6,755,3.0,22.1,18.4,-948],["SÃO GONÇALO DO AMARANTE",51355,23181,23120,-61,-5.2,3788,6.8,15.1,16.3,1430],["TAMBORIL",21345,12596,12211,-385,-1.8,1093,6.8,24.1,19.1,-1307],["SOLONÓPOLE",14292,9230,8309,-921,-8.3,942,8.3,22.0,17.9,-715],["SÃO LUÍS DO CURU",12630,6449,6697,248,-4.3,832,6.3,17.4,17.4,239],["SANTANA DO CARIRI",13899,9209,9167,-42,-3.9,602,5.1,17.4,17.4,131],["TAUÁ",47270,22509,23351,842,0.5,2352,5.8,23.6,19.6,-1931],["TEJUÇUOCA",15973,9288,9096,-192,-6.0,1223,8.4,15.5,15.1,107],["TRAIRI",49869,25816,26868,1052,-3.9,3651,7.0,16.1,15.1,290],["UMIRIM",16067,9009,8829,-180,-4.7,989,7.0,18.2,17.9,103],["TURURU",15653,8595,8801,206,-4.6,1068,6.5,15.0,14.0,58],["UBAJARA",27963,12615,13622,1007,-1.1,2149,7.6,17.1,16.6,344],["SÃO JOÃO DO JAGUARIBE",5965,3730,3586,-144,0.9,111,3.1,25.8,19.6,-534],["TARRAFAS",7393,4652,4471,-181,-3.8,308,5.5,26.5,21.1,-494],["URUBURETAMA",18709,10153,10246,93,-2.1,805,4.6,15.3,16.6,444],["UMARI",6522,3521,3891,370,1.9,242,3.4,23.2,17.6,-346],["VARJOTA",15992,7366,7596,230,0.2,1764,13.3,23.3,15.9,-1362],["URUOCA",11317,6707,6441,-266,-5.2,693,7.2,16.7,16.8,96],["TIANGUÁ",59588,27322,25577,-1745,-7.4,5781,10.3,15.0,14.3,239],["VIÇOSA DO CEARÁ",48288,26115,25776,-339,-4.6,3469,8.4,19.4,17.8,-222],["VÁRZEA ALEGRE",32554,19451,18931,-520,-5.2,1817,6.6,19.5,18.1,-217]];
+const CH=[["FORTALEZA",5007.0,"-5.007"],["MORADA NOVA",2855.0,"-2.855"],["BOA VIAGEM",2389.0,"-2.389"],["CRATO",2114.0,"-2.114"],["TIANGUÁ",1745.0,"-1.745"],["SÃO BENEDITO",1638.0,"-1.638"],["RUSSAS",1457.0,"-1.457"],["PARAMBU",1304.0,"-1.304"],["IPUEIRAS",1147.0,"-1.147"],["PEDRA BRANCA",1122.0,"-1.122"],["NOVO ORIENTE",1023.0,"-1.023"],["SOLONÓPOLE",921.0,"-921"]];
+// colunas: 0 nome,1 eleit,2 lula22,3 lula26,4 dLula,5 ppLula,6 dCampoB,7 ppCampoB,8 abst22%,9 abst26%,10 dAbst
+const fmt=new Intl.NumberFormat('pt-BR');
+const pp=new Intl.NumberFormat('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1,signDisplay:'always'});
+const sg=new Intl.NumberFormat('pt-BR',{signDisplay:'always'});
+const cap=s=>s.toLowerCase().replace(/(^|[\s'’-])(\S)/g,(m,a,b)=>a+b.toUpperCase()).replace(/\b(Da|De|Do|Das|Dos|E)\b/g,x=>x.toLowerCase());
+const rows=D.map(r=>{
+  const dAbstPP=r[9]-r[8];
+  const mob=dAbstPP>=1.5, conv=(r[5]<=-3&&r[7]>=3)||(r[6]>=3000&&r[4]<=-3000);
+  const tipo=mob&&conv?'Os dois':mob?'Mobilizar':conv?'Converter':'Manter';
+  const score=Math.max(0,-r[4])+Math.max(0,r[10]);
+  return {n:cap(r[0]),e:r[1],l22:r[2],l26:r[3],dl:r[4],pl:r[5],db:r[6],pb:r[7],a22:r[8],a26:r[9],da:r[10],dap:dAbstPP,tipo,score};
+});
+// gráfico (dados vêm da página)
+(function(){
+  const el=document.getElementById('grafico');if(!el||typeof CH==='undefined')return;
+  const max=Math.max(...CH.map(r=>r[1]));
+  el.innerHTML=CH.map(r=>`<div class="linha"><div class="n">${cap(r[0])}</div><div class="trilho"><b style="width:${(100*r[1]/max).toFixed(1)}%"></b></div><div class="v">${r[2]}</div></div>`).join('');
+})();
+// tabela
+const cols=[['n','Cidade'],['e','Eleitores'],['l22','Lula 2022'],['l26','Lula 2026'],['dl','Lula (votos)'],['pl','Lula (pontos)'],['db','Bolsonaro/Flávio'],['a22','Abst. 2022 %'],['a26','Abst. 2026 %'],['da','Abst. (pessoas)']];
+let ord={k:'dl',d:1};
+const thead=document.querySelector('#tab thead'),tbody=document.querySelector('#tab tbody');
+function head(){thead.innerHTML='<tr>'+cols.map(([k,t])=>`<th scope="col" data-k="${k}" ${ord.k===k?`aria-sort="${ord.d>0?'ascending':'descending'}"`:''}>${t}${ord.k===k?(ord.d>0?' ▲':' ▼'):''}</th>`).join('')+'</tr>'}
+function draw(){
+  if(!tbody)return;
+  const q=document.getElementById('busca').value.trim().toLowerCase(),f='';
+  let v=rows.filter(r=>(!q||r.n.toLowerCase().includes(q))&&true);
+  v.sort((a,b)=>{const x=a[ord.k],y=b[ord.k];return (typeof x==='string'?x.localeCompare(y,'pt-BR'):x-y)*ord.d});
+  tbody.innerHTML=v.map(r=>`<tr><td>${r.n}</td><td>${fmt.format(r.e)}</td><td>${fmt.format(r.l22)}</td><td>${fmt.format(r.l26)}</td><td class="${r.dl<0?'bad':'good'}">${sg.format(r.dl)}</td><td>${pp.format(r.pl)}</td><td>${sg.format(r.db)}</td><td>${String(r.a22).replace('.',',')}</td><td>${String(r.a26).replace('.',',')}</td><td class="${r.da>0?'bad':'good'}">${sg.format(r.da)}</td></tr>`).join('');
+  document.getElementById('contagem').textContent=`${v.length} de ${rows.length} cidades. Ordenado por ${cols.find(c=>c[0]===ord.k)[1].toLowerCase()}.`;
+  head();
+}
+thead&&thead.addEventListener('click',e=>{const th=e.target.closest('th');if(!th)return;const k=th.dataset.k;ord=ord.k===k?{k,d:-ord.d}:{k,d:k==='n'||k==='tipo'?1:-1};draw()});
+document.getElementById('busca')&&document.getElementById('busca').addEventListener('input',draw);
+
+draw();
+// menu: seção atual
+(function(){
+  const links=[...document.querySelectorAll('.nav a')];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-30% 0px -60% 0px'});
+  document.querySelectorAll('main section').forEach(s=>io.observe(s));
+})();
+</script>
+</body>
+</html>
